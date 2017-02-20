@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <report
+            id="report_escandallo_cost"
+            string="Informe Costes"
+            model="cost.header"
+            report_type="qweb-pdf"
+            name="escandallo.report_cost"
+            attachment_use="False"
+            file="escandallo.report_cost"
+        />
+    </data>
+</openerp>

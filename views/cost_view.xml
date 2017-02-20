@@ -1,0 +1,217 @@
+<openerp>
+	<data>
+		<!-- Action to open Cost -->
+		<act_window id="action_escandallo"
+			name="Cost Analysis"
+			res_model='cost.header'
+			view_mode="tree,form" />
+
+		<!-- Action to open component -->
+		<act_window id="action_component"
+			name="Component Analysis"
+			res_model='component.header'
+			view_mode="tree,form,search" />
+
+		<!-- Menu time to open To-od Task list -->
+		<menuitem id="menu_cost_analysis_main"
+			name="Main Escandallo"
+			sequence="450"/>
+		<menuitem id="menu_cost_analysis_escandallo"
+			name="Cost analysis "
+			parent="menu_cost_analysis_main"
+			sequence="10"
+			 />
+		<menuitem id="menu_cost_analysis_escandallo_detail"
+			name="Cost analysis detail"
+			parent="menu_cost_analysis_escandallo"
+			sequence="20"
+			action="action_escandallo"
+			 />
+
+
+		<!-- Menu itme to open component list -->
+		<menuitem id="menu_cost_analysis_component"
+			name="Component analysis "
+			parent="mail.mail_feeds"
+			sequence="20"
+			action="action_component"
+			 />
+
+
+		<!-- Tree view -->
+		<record id="view_tree_escandallo"
+			model="ir.ui.view">
+			<field name="name">Cost analysis tree</field>
+			<field name="model">cost.header</field>
+			<field name="arch" type="xml">
+				<tree color="gray:is_done==True">
+					<field name="customer_id" />
+					<field name="name"/>
+					<field name="version" />
+					<field name="start_date"/>
+					<field name="end_date" />
+					<field name="total_price" />
+					<field name="project_margin" />
+					<field name="stage" />
+				</tree>
+			</field>
+		</record>
+
+		<!-- Search view -->
+		<record id="view_search_escandallo"
+			model="ir.ui.view">
+			<field name="name">Cost analysis search</field>
+			<field name="model">cost.header</field>
+			<field name="arch" type="xml">
+				<search String="Search Escandallo">
+					<field name="name" string="Escandallo"
+						filter_domain="['|','|',('customer_id','ilike',self),('name','ilike',self),('version','ilike',self)]"/>
+					<field name="customer_id" string="Customer" />
+					<field name="name" String="Name" />
+					<filter string="Not Done"
+						domain="[('stage','!=','done')]"/>
+					<separator/>
+					<group string="Group by">
+						<filter name="group_stage" 
+							string="By Stage"
+							context="{'group_by':'stage'}"/>
+						<filter name="group_custome" 
+							string="By Customer"
+							context="{'group_by':'customer_id'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+
+		<!-- Form view -->
+		<record id="view_form_escandallo"
+			model="ir.ui.view">
+			<field name="name">Escandallo Form</field>
+			<field name="model">cost.header</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<field name="stage" widget="statusbar"
+							clickable="True" />
+					</header>
+					<sheet>
+						<div clas="oe_title">
+							<h1><p>Ficha técnica</p></h1>
+						</div>
+
+                        <group name="cabecera" col="6">
+                            <group name="cab1">
+                                <field name="name" />
+                                <field name="version"/>
+                            </group>
+                            <group name="cab2" colspan="4">
+                                <field name="title"/>
+                            </group>
+                        </group>
+
+						<group name="description" col="6">
+							<group name="left_desc">
+								<field name="customer_id"/>
+								<field name="start_date" />
+							</group>
+							<group name="right_desc" colspan="4">
+								<field name="end_date" />
+								<field name="description" />
+							</group>
+						</group>
+
+						<group name="group_cost" col="6" colspan="2">
+							<group name="group_left" string="Material Cost">
+								<field name="material_cost"/>
+								<field name="material_markup" />
+								<field name="material_cost_markup" readonly="1" />
+
+							</group>
+							<group name="group_center" string="Margin">
+								<field name="unit_margin" readonly="1" />
+								<field name="project_margin" readonly="1" />
+							</group>
+							<group name="group_right" string="Direct Labor">
+								<field name="units" />
+								<field name="work_cost" readonly="1" />
+								<field name="unit_price" readonly="1" />
+								<field name="total_price" readonly="1" />
+							</group>
+						</group>
+						<notebook>
+							<page string="Materials" name="materials">
+								<field name="cost_ids" nolabel="1" widget="one2many_list">
+									<tree string="Cost lines" editable="bottom">
+										<field name="product_id" />
+										<field name="unidades" />
+										<field name="qty_ldm" />
+										<field name="price_unit" />
+										<button name="open_component" type="object" icon="gtk-go-forward" context="{'material_id':product_id}" class="oe_edit_only"></button>
+										<field name="discount" />
+										<field name="price_unit_net" />
+										<field name="price_total" sum="Total Cost" />
+									</tree>
+								</field>
+							</page>
+							<page string="Work" name="work">
+								<field name="work_ids" nolabel="1" widget="one2many_list">
+									<tree string="Cost lines" editable="bottom">
+										<field name="product_id" />
+										<field name="unidades" />
+										<field name="qty_ldm" />
+										<field name="price_unit" />
+										<field name="price_total" sum="Total Cost" />
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<!-- Component Views -->
+
+
+		<!-- Tree view -->
+		<record id="view_tree_component"
+			model="ir.ui.view">
+			<field name="name">Cost analysis tree</field>
+			<field name="model">component.header</field>
+			<field name="arch" type="xml">
+				<tree color="gray:is_done==True">
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- Form view -->
+		<record id="view_form_component"
+			model="ir.ui.view">
+			<field name="name">Component Form</field>
+			<field name="model">component.header</field>
+			<field name="arch" type="xml">
+				<form>
+					<field name="name"/>
+					<field name="cost_ids" nolabel="1" widget="one2many_list">
+						<tree string="Cost lines" editable="bottom">
+							<field name="product_id" />
+							<field name="unidades" />
+							<field name="qty_ldm" />
+							<field name="price_unit" />
+							<field name="price_total" sum="Total Cost" />
+
+						</tree>
+					</field>
+					<footer>
+                        <button name="save_component" type="object"
+                                string="Guardar" class="oe_highlight"/>
+                        <button special="cancel" string="Cancelar"/>
+                    </footer>
+				</form>
+			</field>
+		</record>
+
+
+	</data>
+</openerp>
