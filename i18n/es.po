@@ -23,7 +23,7 @@ msgstr ""
 #: field:cost.header,material_markup:0
 #, python-format
 msgid "% Markup"
-msgstr "% Sobrepecio"
+msgstr "% Sobreprecio"
 
 #. module: escandallo
 #: code:addons/acelerem_addons/escandallo/models/cost_model.py:88
