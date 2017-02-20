@@ -6,27 +6,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-09 17:08+0000\n"
-"PO-Revision-Date: 2017-01-09 18:24+0100\n"
-"Last-Translator: Salvador <salvador.sanjuan@gmail.com>\n"
-"Language-Team: Spanish (http://www.transifex.com/odoo/odoo-8/language/es/)\n"
+"POT-Creation-Date: 2017-02-20 17:05+0000\n"
+"PO-Revision-Date: 2017-02-20 18:07+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
 "Language: es\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:28 field:cost.header,material_markup:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:32
+#: code:addons/escandallo/models/cost_model.py:32
+#: field:cost.header,material_markup:0
 #, python-format
 msgid "% Markup"
 msgstr "% Sobrepecio"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:84
-#: code:addons/escandallo/cost_model.py:181 field:component.lines,qty_ldm:0
-#: field:cost.lines,qty_ldm:0 field:work.lines,qty_ldm:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:88
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:185
+#: code:addons/escandallo/models/cost_model.py:88
+#: code:addons/escandallo/models/cost_model.py:185
+#: field:component.lines,qty_ldm:0 field:cost.lines,qty_ldm:0
+#: field:work.lines,qty_ldm:0
 #, python-format
 msgid "Amount"
 msgstr "Cantidad"
@@ -52,14 +57,30 @@ msgid "Cancelar"
 msgstr "Cancelar"
 
 #. module: escandallo
+#: view:website:escandallo.report_cost
+msgid "Cantidad"
+msgstr "Cantidad"
+
+#. module: escandallo
+#: view:website:escandallo.report_cost
+msgid "Cliente"
+msgstr "Cliente"
+
+#. module: escandallo
 #: field:component.header,name:0 field:cost.header,name:0
 msgid "Code"
 msgstr "Código"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:82 field:cost.lines,component_ids:0
-#: field:cost.lines,component_name:0 field:work.lines,component_ids:0
-#: field:work.lines,component_name:0
+#: view:website:escandallo.report_cost
+msgid "Codigo"
+msgstr "Código"
+
+#. module: escandallo
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:86
+#: code:addons/escandallo/models/cost_model.py:86
+#: field:cost.lines,component_ids:0 field:cost.lines,component_name:0
+#: field:work.lines,component_ids:0 field:work.lines,component_name:0
 #, python-format
 msgid "Component"
 msgstr "Componente"
@@ -125,7 +146,8 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:11
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:14
+#: code:addons/escandallo/models/cost_model.py:14
 #: view:cost.header:escandallo.view_search_escandallo
 #: field:cost.header,customer_id:0
 #, python-format
@@ -133,13 +155,31 @@ msgid "Customer"
 msgstr "Cliente"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:13 field:cost.header,description:0
+#: view:website:escandallo.report_cost
+msgid "Descripcion"
+msgstr "Descripcion"
+
+#. module: escandallo
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:17
+#: code:addons/escandallo/models/cost_model.py:17
+#: field:cost.header,description:0
 #, python-format
 msgid "Description"
 msgstr "Descripción"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:86 field:cost.lines,discount:0
+#: view:website:escandallo.report_cost
+msgid "Descuento"
+msgstr "Descuento"
+
+#. module: escandallo
+#: view:cost.header:escandallo.view_form_escandallo
+msgid "Direct Labor"
+msgstr "Mano de Obra"
+
+#. module: escandallo
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:90
+#: code:addons/escandallo/models/cost_model.py:90 field:cost.lines,discount:0
 #: field:work.lines,discount:0
 #, python-format
 msgid "Discount"
@@ -158,7 +198,8 @@ msgid "Done"
 msgstr "Realizado"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:15 field:cost.header,end_date:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:19
+#: code:addons/escandallo/models/cost_model.py:19 field:cost.header,end_date:0
 #, python-format
 msgid "End Date"
 msgstr "Fecha finalización"
@@ -167,6 +208,21 @@ msgstr "Fecha finalización"
 #: view:cost.header:escandallo.view_search_escandallo
 msgid "Escandallo"
 msgstr "Escandallo"
+
+#. module: escandallo
+#: view:website:escandallo.report_cost
+msgid "Fecha Finalizacion"
+msgstr "Fecha Finalizacion"
+
+#. module: escandallo
+#: view:website:escandallo.report_cost
+msgid "Fecha Inicio"
+msgstr "Fecha Inicio"
+
+#. module: escandallo
+#: view:website:escandallo.report_cost
+msgid "Ficha Tecnica"
+msgstr "Ficha Tecnica"
 
 #. module: escandallo
 #: view:cost.header:escandallo.view_form_escandallo
@@ -200,9 +256,14 @@ msgid "In Process"
 msgstr "En proceso"
 
 #. module: escandallo
-#: field:component.header,__last_update:0
-#: field:component.lines,__last_update:0 field:cost.header,__last_update:0
-#: field:cost.lines,__last_update:0 field:work.lines,__last_update:0
+#: model:ir.actions.report.xml,name:escandallo.report_escandallo_cost
+msgid "Informe Costes"
+msgstr "Informe Costes"
+
+#. module: escandallo
+#: field:component.header,__last_update:0 field:component.lines,__last_update:0
+#: field:cost.header,__last_update:0 field:cost.lines,__last_update:0
+#: field:work.lines,__last_update:0
 msgid "Last Modified on"
 msgstr "Última modificación"
 
@@ -227,12 +288,23 @@ msgstr "Escandallo"
 
 #. module: escandallo
 #: view:cost.header:escandallo.view_form_escandallo
+msgid "Margin"
+msgstr "Margen"
+
+#. module: escandallo
+#: view:cost.header:escandallo.view_form_escandallo
+msgid "Material Cost"
+msgstr "Coste Materiales"
+
+#. module: escandallo
+#: view:cost.header:escandallo.view_form_escandallo
 msgid "Materials"
 msgstr "Materiales"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:88 field:cost.lines,price_unit_net:0
-#: field:work.lines,price_unit_net:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:92
+#: code:addons/escandallo/models/cost_model.py:92
+#: field:cost.lines,price_unit_net:0 field:work.lines,price_unit_net:0
 #, python-format
 msgid "Net price"
 msgstr "Precio neto"
@@ -248,15 +320,30 @@ msgid "Pending"
 msgstr "Pendiente"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:81
-#: code:addons/escandallo/cost_model.py:179 field:component.lines,product_id:0
-#: field:cost.lines,product_id:0 field:work.lines,product_id:0
+#: view:website:escandallo.report_cost
+msgid "Precio Unitario"
+msgstr "Precio Unitario"
+
+#. module: escandallo
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:85
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:183
+#: code:addons/escandallo/models/cost_model.py:85
+#: code:addons/escandallo/models/cost_model.py:183
+#: field:component.lines,product_id:0 field:cost.lines,product_id:0
+#: field:work.lines,product_id:0
 #, python-format
 msgid "Product"
 msgstr "Producto"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:31 field:cost.header,project_margin:0
+#: view:website:escandallo.report_cost
+msgid "Producto"
+msgstr "Producto"
+
+#. module: escandallo
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:35
+#: code:addons/escandallo/models/cost_model.py:35
+#: field:cost.header,project_margin:0
 #, python-format
 msgid "Project margin"
 msgstr "Margen del proyecto"
@@ -267,10 +354,29 @@ msgid "Stage"
 msgstr "Etapa"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:14 field:cost.header,start_date:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:18
+#: code:addons/escandallo/models/cost_model.py:18
+#: field:cost.header,start_date:0
 #, python-format
 msgid "Start Date"
 msgstr "Fecha de inicio"
+
+#. module: escandallo
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:16
+#: code:addons/escandallo/models/cost_model.py:16 field:cost.header,title:0
+#, python-format
+msgid "Title"
+msgstr "Titulo"
+
+#. module: escandallo
+#: view:website:escandallo.report_cost
+msgid "Titulo"
+msgstr "Titulo"
+
+#. module: escandallo
+#: view:website:escandallo.report_cost
+msgid "Total"
+msgstr "Total"
 
 #. module: escandallo
 #: view:component.header:escandallo.view_form_component
@@ -279,21 +385,26 @@ msgid "Total Cost"
 msgstr "Coste total"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:33 field:cost.header,total_price:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:37
+#: code:addons/escandallo/models/cost_model.py:37
+#: field:cost.header,total_price:0
 #, python-format
 msgid "Total Price"
 msgstr "Precio total"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:29
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:33
+#: code:addons/escandallo/models/cost_model.py:33
 #: field:cost.header,material_cost_markup:0
 #, python-format
 msgid "Total Unit Price"
 msgstr "Precio unitario total"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:92
-#: code:addons/escandallo/cost_model.py:184
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:96
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:188
+#: code:addons/escandallo/models/cost_model.py:96
+#: code:addons/escandallo/models/cost_model.py:188
 #: field:component.lines,price_total:0 field:cost.lines,price_total:0
 #: field:work.lines,price_total:0
 #, python-format
@@ -301,48 +412,61 @@ msgid "Total Value"
 msgstr "Valor total"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:26 field:cost.header,material_cost:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:30
+#: code:addons/escandallo/models/cost_model.py:30
+#: field:cost.header,material_cost:0
 #, python-format
 msgid "Unit Material Cost"
 msgstr "Coste materiales unitario"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:182 field:component.lines,price_unit:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:186
+#: code:addons/escandallo/models/cost_model.py:186
+#: field:component.lines,price_unit:0
 #, python-format
 msgid "Unit Price"
 msgstr "Precio Unitario"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:27 field:cost.header,work_cost:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:31
+#: code:addons/escandallo/models/cost_model.py:31 field:cost.header,work_cost:0
 #, python-format
 msgid "Unit Work cost"
 msgstr "Coste laboral unitario"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:30 field:cost.header,unit_margin:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:34
+#: code:addons/escandallo/models/cost_model.py:34
+#: field:cost.header,unit_margin:0
 #, python-format
 msgid "Unit margin"
 msgstr "Margen Unitario"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:32
-#: code:addons/escandallo/cost_model.py:85 field:cost.header,unit_price:0
-#: field:cost.lines,price_unit:0 field:work.lines,price_unit:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:36
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:89
+#: code:addons/escandallo/models/cost_model.py:36
+#: code:addons/escandallo/models/cost_model.py:89
+#: field:cost.header,unit_price:0 field:cost.lines,price_unit:0
+#: field:work.lines,price_unit:0
 #, python-format
 msgid "Unit price"
 msgstr "Precio unitario"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:83
-#: code:addons/escandallo/cost_model.py:180 field:component.lines,unidades:0
-#: field:cost.header,units:0 field:cost.lines,unidades:0
-#: field:work.lines,unidades:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:87
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:184
+#: code:addons/escandallo/models/cost_model.py:87
+#: code:addons/escandallo/models/cost_model.py:184
+#: field:component.lines,unidades:0 field:cost.header,units:0
+#: field:cost.lines,unidades:0 field:work.lines,unidades:0
 #, python-format
 msgid "Units"
 msgstr "Unidades"
 
 #. module: escandallo
-#: code:addons/escandallo/cost_model.py:12 field:cost.header,version:0
+#: code:addons/acelerem_addons/escandallo/models/cost_model.py:15
+#: code:addons/escandallo/models/cost_model.py:15 field:cost.header,version:0
 #, python-format
 msgid "Version"
 msgstr "Versión"
